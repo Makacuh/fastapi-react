@@ -10,7 +10,7 @@ const authProvider = {
     let formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
-    const request = new Request('/api/token', {
+    const request = new Request('http://127.0.0.1:8000/auth/login', {
       method: 'POST',
       body: formData,
     });

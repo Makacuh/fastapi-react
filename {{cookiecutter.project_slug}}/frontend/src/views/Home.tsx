@@ -27,7 +27,7 @@ export const Home: FC = () => {
   return (
     <>
       {!message && !error && (
-        <a className={classes.link} href="#" onClick={() => queryBackend()}>
+        <a className={classes.link} href="#/" onClick={() => queryBackend()}>
           Click to make request to backend
         </a>
       )}

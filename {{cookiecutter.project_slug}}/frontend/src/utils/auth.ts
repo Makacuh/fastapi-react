@@ -25,8 +25,9 @@ export const login = async (email: string, password: string) => {
   // OAuth2 expects form data, not JSON data
   formData.append('username', email);
   formData.append('password', password);
+  formData.append('grant_type', 'password');
 
-  const request = new Request('/api/token', {
+  const request = new Request('http://127.0.0.1:8000/auth/login', {
     method: 'POST',
     body: formData,
   });
@@ -51,8 +52,9 @@ export const login = async (email: string, password: string) => {
     localStorage.setItem('token', data['access_token']);
     localStorage.setItem('permissions', decodedToken.permissions);
   }
-
+  console.log(data);
   return data;
+  
 };
 
 /**
@@ -83,8 +85,9 @@ export const signUp = async (
   // OAuth2 expects form data, not JSON data
   formData.append('username', email);
   formData.append('password', password);
+  formData.append('grant_type', 'password');
 
-  const request = new Request('/api/signup', {
+  const request = new Request('http://127.0.0.1:8000/auth/login', {
     method: 'POST',
     body: formData,
   });

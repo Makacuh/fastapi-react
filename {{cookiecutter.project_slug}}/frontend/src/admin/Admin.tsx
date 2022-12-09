@@ -5,7 +5,9 @@ import authProvider from './authProvider';
 
 import { UserList, UserEdit, UserCreate } from './Users';
 
+
 const httpClient = (url: any, options: any) => {
+  
   if (!options) {
     options = {};
   }
@@ -17,7 +19,7 @@ const httpClient = (url: any, options: any) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider('api/v1', httpClient);
+const dataProvider = simpleRestProvider('http://127.0.0.1:8000/auth/login', httpClient);
 
 export const Admin: FC = () => {
   return (
